@@ -37,3 +37,4 @@
 
 - name: Update Sudoers Secure Path
   lineinfile: regexp=secure_path line="Defaults    secure_path=\"/usr/local/ruby/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"" dest=/etc/sudoers
+  tags: ruby-builder
