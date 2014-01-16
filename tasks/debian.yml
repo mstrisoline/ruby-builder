@@ -1,0 +1,14 @@
+#File tasks/debian.yml
+---
+- name: Purge System Ruby
+  apt: pkg=ruby state=absent
+
+- name: Install Build Tools
+  apt: pkg={{ item }} state=present
+  with_items:
+    - autoconf
+    - build-essential
+
+- name: Install Ruby Dependencies Packages
+  apt: pkg={{ item }} state=present
+  with_items: deb_ruby_dependencies

@@ -1,0 +1,40 @@
+#File playbooks/roles/ruby/tasks/main.yml
+---
+- include: redhat.yml
+  when: ansible_os_family == "RedHat"
+  tags: ruby-builder
+
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+  tags: ruby-builder
+
+- name: Pull down ruby-build
+  git: repo=https://github.com/sstephenson/ruby-build.git dest=/tmp/ruby-build depth=1
+  tags: ruby-builder
+
+- name: Install ruby-build tool
+  command: /bin/sh install.sh chdir=/tmp/ruby-build
+  tags: ruby-builder
+
+- name: Update ENV Path
+  template: src=environment.j2 dest=/etc/environment owner=root group=root mode=0644
+  tags: ruby-builder
+
+- name: Check to See if Ruby Is Already Installed
+  stat: path="/usr/local/ruby-{{ ruby_version }}/bin/ruby"
+  register: rb
+  tags: ruby-builder
+
+- name: Install Ruby Version
+  command: /usr/local/bin/ruby-build {{ ruby_version }} "/usr/local/ruby-{{ ruby_version }}"
+  when: rb.stat.exists == false
+  tags: ruby-builder
+
+- name: Link Ruby Version to /usr/local/ruby
+  file: path="/usr/local/ruby" src="/usr/local/ruby-{{ ruby_version }}" state=link
+  when: rb.stat.exists == false
+  tags: ruby-builder
+
+- name: Update Sudoers Secure Path
+  lineinfile: regexp="Defaults    secure_path = /usr/local/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin" line="Defaults    secure_path = /usr/local/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/ruby/bin" dest=/etc/sudoers
+  tags: ruby-builder

@@ -1,0 +1,18 @@
+#File vars/main.yml
+---
+rhel_ruby_dependencies:
+  - git
+  - gcc-c++
+  - make
+  - patch
+  - autoconf
+  - openssl-devel
+  - readline-devel
+  - libyaml-devel
+  - zlib-devel
+deb_ruby_dependencies:
+  - git
+  - libreadline-dev
+  - libssl-dev
+  - libyaml-dev
+  - zlib1g-dev
