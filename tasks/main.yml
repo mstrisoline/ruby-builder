@@ -9,7 +9,7 @@
   tags: ruby-builder
 
 - name: Pull down ruby-build
-  git: repo=https://github.com/sstephenson/ruby-build.git dest=/tmp/ruby-build depth=1
+  git: repo=https://github.com/sstephenson/ruby-build.git dest=/tmp/ruby-build depth=1 update=yes
   tags: ruby-builder
 
 - name: Install ruby-build tool
@@ -36,5 +36,4 @@
   tags: ruby-builder
 
 - name: Update Sudoers Secure Path
-  lineinfile: regexp="Defaults    secure_path = /usr/local/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin" line="Defaults    secure_path = /usr/local/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/ruby/bin" dest=/etc/sudoers
-  tags: ruby-builder
+  lineinfile: regexp=secure_path line="Defaults    secure_path=\"/usr/local/ruby/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"" dest=/etc/sudoers

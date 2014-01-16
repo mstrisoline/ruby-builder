@@ -1,4 +1,4 @@
 #File defaults/main.yml
 ---
 ruby_version: 2.1.0
-environment_path: "/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/ruby/bin"
+environment_path: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin"

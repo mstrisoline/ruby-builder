@@ -1,11 +1,8 @@
 #File tasks/redhat.yml
 ---
-- name: Purge System Ruby
+- name: Purge System Ruby (RHEL)
   yum: name=ruby state=absent
 
-#- name: Install Development tools
-#  yum: name="@Development tools" state=present
-
-- name: Install Ruby Dependencies Packages
+- name: Install Ruby Dependencies Packages (RHEL)
   yum: name={{ item }} state=present
   with_items: rhel_ruby_dependencies
