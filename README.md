@@ -30,13 +30,13 @@ This play inclues variables for RHEL / Deb required packages as well as two defa
 All variables are prefixed with the name of the play "ruby_builder"
 
 ### Default Variables
-```yaml
----
-ruby_builder_ruby_version: 2.1.0
-ruby_builder_environment_path: "/usr/local/ruby/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-```
+
+    ---
+    ruby_builder_ruby_version: 2.1.0
+    ruby_builder_environment_path: "/usr/local/ruby/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 ruby_builder_version = The version of ruby to be installed
+
 ruby_builder_environment_path = The path to set in /etc/environment used by templates/environment.j2
 
 ### Variables in vars/main.yml
@@ -45,25 +45,23 @@ I would advise against changing these as they shouldn't need modified.
 
 I am more fluent with RHEL based systems so its more minimalistic than the Debian based systems.
 
-```yaml
----
-ruby_builder_rhel_ruby_dependencies:
-  - git
-  - gcc-c++
-  - make
-  - patch
-  - autoconf
-  - openssl-devel
-  - readline-devel
-  - libyaml-devel
-  - zlib-devel
-ruby_builder_deb_ruby_dependencies:
-  - git
-  - libreadline-dev
-  - libssl-dev
-  - libyaml-dev
-  - zlib1g-dev
-```
+    ---
+    ruby_builder_rhel_ruby_dependencies:
+      - git
+      - gcc-c++
+      - make
+      - patch
+      - autoconf
+      - openssl-devel
+      - readline-devel
+      - libyaml-devel
+      - zlib-devel
+    ruby_builder_deb_ruby_dependencies:
+      - git
+      - libreadline-dev
+      - libssl-dev
+      - libyaml-dev
+      - zlib1g-dev
 
 ## Working against the following Distributions
 
