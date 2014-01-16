@@ -5,4 +5,4 @@
 
 - name: Install Ruby Dependencies Packages (RHEL)
   yum: name={{ item }} state=present
-  with_items: rhel_ruby_dependencies
+  with_items: ruby_builder_rhel_ruby_dependencies

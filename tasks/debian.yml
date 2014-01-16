@@ -11,4 +11,4 @@
 
 - name: Install Ruby Dependencies Packages (Debian)
   apt: pkg={{ item }} state=present
-  with_items: deb_ruby_dependencies
+  with_items: ruby_builder_deb_ruby_dependencies
