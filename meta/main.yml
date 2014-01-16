@@ -1,0 +1,20 @@
+#File meta/main.yml
+---
+galaxy_info:
+  author: "Matthew Trisoline"
+  description: "Ansible role that compiles and installs Ruby (https://www.ruby-lang.org) for Debian and RHEL based Distributions"
+  license: MIT
+  min_ansible_version: 1.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - Precise
+        - Saucy
+    - name: Fedora
+      versions:
+        - Spherical Cow
+        - "Schrodinger's Cat"
+        - Heisenbug
+  categories:
+    - development
+dependencies: []

@@ -1,6 +1,6 @@
 #File vars/main.yml
 ---
-rhel_ruby_dependencies:
+ruby_builder_rhel_ruby_dependencies:
   - git
   - gcc-c++
   - make
@@ -10,7 +10,7 @@ rhel_ruby_dependencies:
   - readline-devel
   - libyaml-devel
   - zlib-devel
-deb_ruby_dependencies:
+ruby_builder_deb_ruby_dependencies:
   - git
   - libreadline-dev
   - libssl-dev

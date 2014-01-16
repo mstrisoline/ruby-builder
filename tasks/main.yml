@@ -21,17 +21,17 @@
   tags: ruby-builder
 
 - name: Check to See if Ruby Is Already Installed
-  stat: path="/usr/local/ruby-{{ ruby_version }}/bin/ruby"
+  stat: path="/usr/local/ruby-{{ ruby_builder_ruby_version }}/bin/ruby"
   register: rb
   tags: ruby-builder
 
 - name: Install Ruby Version
-  command: /usr/local/bin/ruby-build {{ ruby_version }} "/usr/local/ruby-{{ ruby_version }}"
+  command: /usr/local/bin/ruby-build {{ ruby_builder_ruby_version }} "/usr/local/ruby-{{ ruby_builder_ruby_version }}"
   when: rb.stat.exists == false
   tags: ruby-builder
 
 - name: Link Ruby Version to /usr/local/ruby
-  file: path="/usr/local/ruby" src="/usr/local/ruby-{{ ruby_version }}" state=link
+  file: path="/usr/local/ruby" src="/usr/local/ruby-{{ ruby_builder_ruby_version }}" state=link
   when: rb.stat.exists == false
   tags: ruby-builder
 
