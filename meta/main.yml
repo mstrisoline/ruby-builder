@@ -8,13 +8,13 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - Precise
-        - Saucy
+        - precise
+        - saucy
     - name: Fedora
       versions:
-        - Spherical Cow
-        - "Schrodinger's Cat"
-        - Heisenbug
+        - 18
+        - 19
+        - 20
   categories:
     - development
 dependencies: []

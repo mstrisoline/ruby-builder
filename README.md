@@ -65,6 +65,8 @@ I am more fluent with RHEL based systems so its more minimalistic than the Debia
 
 ## Working against the following Distributions
 
+Please submit issues or contact me to update other distros this works with that I have not tested.
+
 Fedora:
   1. 18 Spherical Cow
   1. 19 Schrodinger's Cat
