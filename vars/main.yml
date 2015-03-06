@@ -12,6 +12,7 @@ ruby_builder_rhel_ruby_dependencies:
   - zlib-devel
 ruby_builder_deb_ruby_dependencies:
   - git
+  - libffi-dev
   - libreadline-dev
   - libssl-dev
   - libyaml-dev
