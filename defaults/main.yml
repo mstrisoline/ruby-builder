@@ -1,4 +1,4 @@
 #File defaults/main.yml
 ---
-ruby_builder_ruby_version: 2.1.0
+ruby_builder_ruby_version: 2.2.1
 ruby_builder_environment_path: "/usr/local/ruby/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
